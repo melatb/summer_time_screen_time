@@ -4,6 +4,7 @@ import { useLocalStorage } from './hooks/useStorage'
 import { StatusBar } from './components/StatusBar'
 import { AgreementTab } from './components/AgreementTab'
 import { CheckinTab } from './components/CheckinTab'
+import { HowToUse } from './components/HowToUse'
 
 export default function App() {
   const [agreement, setAgreement] = useLocalStorage<Agreement | null>('sca-agreement-v1', null)
@@ -11,6 +12,13 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<TabId>('agreement')
   const [revisitBanner, setRevisitBanner] = useState(false)
   const [showResetConfirm, setShowResetConfirm] = useState(false)
+  const [hasSeenGuide, setHasSeenGuide] = useLocalStorage<boolean>('sca-seen-guide', false)
+  const [showGuide, setShowGuide] = useState(!hasSeenGuide)
+
+  function handleCloseGuide() {
+    setHasSeenGuide(true)
+    setShowGuide(false)
+  }
 
   function handleSaveAgreement(data: Agreement) {
     setAgreement(data)
@@ -30,8 +38,18 @@ export default function App() {
   function handleReset() {
     setAgreement(null)
     setHistory([])
+    setHasSeenGuide(false)
     setShowResetConfirm(false)
     setActiveTab('agreement')
+    setShowGuide(true)
+  }
+
+  if (showGuide) {
+    return (
+      <div className="app">
+        <HowToUse onClose={handleCloseGuide} />
+      </div>
+    )
   }
 
   return (
@@ -39,6 +57,13 @@ export default function App() {
       <div className="app-header">
         <p className="app-title">my screen time — my choice</p>
         <p className="app-subtitle">an agreement I made with myself (and my parent) this summer</p>
+        <button
+          className="help-btn"
+          onClick={() => setShowGuide(true)}
+          style={{ marginTop: '10px' }}
+        >
+          ? how to use this app
+        </button>
       </div>
 
       <div className="wave-strip" />
@@ -120,7 +145,7 @@ export default function App() {
                   cursor: 'pointer',
                 }}
               >
-                Yes, start fresh
+                yes, start fresh
               </button>
               <button
                 onClick={() => setShowResetConfirm(false)}
@@ -135,8 +160,8 @@ export default function App() {
                   cursor: 'pointer',
                 }}
               >
-                Cancel
-          </button>
+                cancel
+              </button>
             </div>
           </div>
         )}

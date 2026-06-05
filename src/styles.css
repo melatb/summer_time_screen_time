@@ -561,3 +561,144 @@ body {
   .pri-grid { grid-template-columns: repeat(2, 1fr); }
   .sig-row { grid-template-columns: 1fr; gap: 1rem; }
 }
+
+.howto-overlay {
+  padding: 0.5rem 0 2rem;
+}
+
+.howto-card {
+  background: #fff8f5;
+}
+
+.howto-header {
+  text-align: center;
+  padding: 1.25rem 1rem 1rem;
+  background: linear-gradient(160deg, #ffe0ec, #ffd6a0 50%, #c9f0ff);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.howto-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: #c0305a;
+  margin-bottom: 4px;
+}
+
+.howto-sub {
+  font-size: 12px;
+  color: #e07040;
+  font-style: italic;
+}
+
+.howto-steps { margin-bottom: 1rem; }
+
+.howto-step {
+  background: white;
+  border: 1px solid #ffeaf0;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.howto-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.n1 { background: #ffe0ec; color: #a02050; }
+.n2 { background: #d6f5ff; color: #006080; }
+.n3 { background: #fff0d6; color: #904010; }
+.n4 { background: #f3eeff; color: #5030a0; }
+.n5 { background: #d6f5e8; color: #006040; }
+
+.howto-step-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3a2030;
+  margin-bottom: 3px;
+}
+
+.howto-step-desc {
+  font-size: 12px;
+  color: #b08090;
+  line-height: 1.5;
+}
+
+.howto-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin: 0 2px;
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+
+.t-aqua { background: #d6f5ff; color: #006080; border: 1px solid #5ad8f5; }
+.t-pink { background: #ffe0ec; color: #a02050; border: 1px solid #ff8ab0; }
+
+.howto-weekly {
+  background: #fff0f7;
+  border: 1px solid #ffd0e0;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.howto-weekly-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #c0305a;
+  margin-bottom: 8px;
+}
+
+.howto-weekly-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: #b08090;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.howto-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #ff8ab0;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.howto-note {
+  font-size: 11px;
+  color: #d0a0b0;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.help-btn {
+  font-family: var(--font);
+  font-size: 12px;
+  color: #d06080;
+  background: white;
+  border: 1px solid #ffd0e0;
+  border-radius: 20px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.help-btn:hover { background: #fff0f7; }
